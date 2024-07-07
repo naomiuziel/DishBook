@@ -8,10 +8,11 @@ DishBook is a work-in-progress recipe sharing platform built with Laravel. Desig
 
 <img src="screenshots/home.png" />
 
-### Recipe management: list
+###  Recipe management: list
+
 <img src="screenshots/list.png" />
 
-### Recipe management: create/edit
+###  Recipe management: create/edit
 
 <img src="screenshots/create.png" />
 
