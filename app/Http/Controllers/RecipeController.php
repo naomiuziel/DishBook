@@ -34,6 +34,13 @@ class RecipeController extends Controller
         ]);
     }
 
+    public function show(Recipe $recipe)
+    {
+        return view('recipes.show', [
+            'recipe' => $recipe,
+        ]);
+    }
+
     public function create()
     {
         $categories = Category::get()->pluck('name', 'id');
