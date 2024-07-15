@@ -41,12 +41,13 @@
             </div>
 
             <div class="w-full sm:w-8/12 h-full">
-                <x-card>
+                <x-card class="mb-4">
                     <h3 class="mb-2 font-semibold text-xl text-gray-800 leading-tight">Steps</h3>
                     <p>{!! nl2br(Purify::clean($recipe->steps)) !!}</p>
                 </x-card>
+
+                @include('recipes.partials.recipe-comments')
             </div>
         </div>
     </div>
-
 </x-app-layout>

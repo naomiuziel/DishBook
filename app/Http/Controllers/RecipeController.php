@@ -36,8 +36,11 @@ class RecipeController extends Controller
 
     public function show(Recipe $recipe)
     {
+        $comments = $recipe->comments()->with('user')->latest()->get();
+
         return view('recipes.show', [
             'recipe' => $recipe,
+            'comments' => $comments,
         ]);
     }
 

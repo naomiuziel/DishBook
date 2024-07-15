@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RecipeCommentController;
 use App\Http\Controllers\RecipeController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/recipes', RecipeController::class);
 
+    Route::post('/recipes/{recipe}/post-comment', [RecipeCommentController::class, 'store']);
 });
 
 require __DIR__ . '/auth.php';
