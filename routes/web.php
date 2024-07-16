@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipeCommentController;
@@ -20,6 +21,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('/recipes', RecipeController::class);
 
     Route::post('/recipes/{recipe}/post-comment', [RecipeCommentController::class, 'store']);
+
+    Route::prefix('admin')->middleware('admin')->group(function () {
+        Route::get('/', [AdminDashboardController::class, 'index']);
+    });
 });
 
 require __DIR__ . '/auth.php';
